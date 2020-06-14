@@ -10,7 +10,9 @@ describe('GET /users', () => {
   before(async () => {
     await db.sync({ force: true })
     await db.models.user.bulkCreate(seedUsers)
-    done()
+    .then(
+      done()
+    )
   })
 
   it('should return list of users', async () => {
